@@ -1,0 +1,26 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+
+#navigation-bar {
+  /* width: 100%; */
+  position: -webkit-sticky; /*safari*/
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.logo {
+  width: 30px;
+}
+
+
+.hidden {
+  display: none;
