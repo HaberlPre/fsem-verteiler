@@ -3,7 +3,7 @@
 var App = App || {};
 App = (function() {
   "use strict";
-  
+
   var that = {},
   db,
   id;
@@ -17,11 +17,11 @@ App = (function() {
   function initFirebase(firebase) {
     console.log(firebase.app().name);
     that.db = firebase.firestore();
-	
+
 	//setID("test");
 	//getData("test");
   }
-  
+
   function setID() {
 	that.db.collection("IDs").doc(id).set({
 	"name": id,
@@ -30,7 +30,7 @@ App = (function() {
 	})
 	supplyPreQuestionnaire();
   }
-  
+
   function getData() {
 	var ref = that.db.collection("IDs").doc(id);
 	ref.get().then(function(doc) {
@@ -42,18 +42,18 @@ App = (function() {
         //console.log("Error getting cached document:", error);
     });
   }
-  
+
   function setupInput(){
 	let idButton = document.getElementById("idInputButton"),
 	idInput = document.getElementById("idInput");
-	
+
 	idButton.addEventListener("click", function() {
       id = idInput.value;
 	  console.log(id);
 	  sessionStorage.setItem("userID", id);
 	  checkDBforID();
     });
-	
+
 	idInput.addEventListener("keyup", function(event) {
 	  if (event.keyCode === 13) {
 		id = idInput.value;
@@ -63,7 +63,7 @@ App = (function() {
 	  }
 	});
   }
-  
+
   function checkDBforID() {
 	let idArray = [];
 	that.db.collection("IDs").get().then((querySnapshot) => {
@@ -74,7 +74,7 @@ App = (function() {
 		})
 	});
 	//console.log(idArray);
-	
+
 	setTimeout(function (){
 		if(idArray.includes(id)) {
 			console.log("video");
@@ -85,20 +85,20 @@ App = (function() {
 		}
     }, 1000); //timeout required for database to answer
   }
-  
-  function supplyPreQuestionnaire() { 
+
+  function supplyPreQuestionnaire() {
 	getData();
 	//balancing
 	//document.getElementById('output').innerHTML = 'Hier könnte dein Link stehen';
 	//console.log("video");
-	
+
 	//zur neuen Seite //auf db warten
 	setTimeout(function (){
-		window.location.href="vorfragebogen.html"; //wenn getData ein ergebnis dafür bringt überspringen?
+		window.location.href="1_vorfragebogen.html"; //wenn getData ein ergebnis dafür bringt überspringen?
 	}, 1000); //timeout required for database to answer
 
   }
-  
+
   //TODO: getData eig nur nötig, wenn user Seite schließen können soll -> nützlich aber viel mehraufwand
 
   that.init = init;

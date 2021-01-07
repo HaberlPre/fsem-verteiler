@@ -3,7 +3,7 @@
 var App = App || {};
 App = (function() {
   "use strict";
-  
+
   var that = {},
   db,
   id,
@@ -24,10 +24,10 @@ App = (function() {
 	userVideoIndex = sessionStorage.getItem("userVideoID");
 	userSubVideoIndex = sessionStorage.getItem("userSubID");
   }
-  
+
   function setupVideoIds() {
 	  //uniqueVideoIds
-	  
+
 	  //Video 1
 		//permutation 1: gut schlecht
 		//let v1_1 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
@@ -76,7 +76,7 @@ App = (function() {
 		v2Array = [v2_1, v2_2, v2_3],
 		v3Array = [v3_1, v3_2, v3_3],
 		v4Array = [v4_1, v4_2, v4_3];*/
-		
+
 		let gruppeA_Brocken1 = [v1_1, v3_2], //oder Brocken (wie auf google doc)
 		gruppeA_Brocken2 = [v1_2, v3_1],
 		gruppeA_Brocken3 = [v1_1, v3_3],
@@ -89,15 +89,15 @@ App = (function() {
 		gruppeB_Brocken4 = [v2_3, v4_1],
 		gruppeB_Brocken5 = [v2_3, v4_2],
 		gruppeB_Brocken6 = [v2_2, v4_3];
-		
+
 		let gruppeA_Fels = [], //Fels = viele Brocken
 		gruppeB_Fels = [];
-		
-		gruppeA_Fels.push(gruppeA_Brocken1, gruppeA_Brocken2, gruppeA_Brocken3, gruppeA_Brocken4, gruppeA_Brocken5, gruppeA_Brocken6); 
-		gruppeB_Fels.push(gruppeB_Brocken1, gruppeB_Brocken2, gruppeB_Brocken3, gruppeB_Brocken4, gruppeB_Brocken5, gruppeB_Brocken6); 
-		
+
+		gruppeA_Fels.push(gruppeA_Brocken1, gruppeA_Brocken2, gruppeA_Brocken3, gruppeA_Brocken4, gruppeA_Brocken5, gruppeA_Brocken6);
+		gruppeB_Fels.push(gruppeB_Brocken1, gruppeB_Brocken2, gruppeB_Brocken3, gruppeB_Brocken4, gruppeB_Brocken5, gruppeB_Brocken6);
+
 		console.log(gruppeA_Fels, gruppeB_Fels);
-		
+
 		for (var i of gruppeA_Fels) {
 			for (var j of gruppeB_Fels) {
 				var smallSubArray = [];
@@ -151,32 +151,32 @@ App = (function() {
   function initFirebase(firebase) {
     console.log(firebase.app().name);
     that.db = firebase.firestore();
-	
+
 	//setID("test");
 	//getData("test");
   }
-  
-  
-  
+
+
+
   function setupInput(){
 	let videoButton1 = document.getElementById("startStudy");
-	
+
 	videoButton1.addEventListener("click", function() {
 	  console.log("bogen done");
-	  //setTimeout(function (){		
+	  //setTimeout(function (){
 		supplyVideo();
 	  //}, 1000); //timeout required for database to answer
     });
   }
-  
-  
+
+
   function supplyVideo() {
 	//balancing
 	//document.getElementById('output').innerHTML = 'Hier könnte dein Link stehen';
 	//console.log("video");
-	
+
 	//todo: videos zuweisen
-	
+
 	//zuvor schauen ob user schon index zugewiesen bekommen hat?
 	if (userVideoIndex == 999) {
 		//aktuellen videoIndex aus DB ziehen
@@ -187,10 +187,10 @@ App = (function() {
 		}).catch(function(error) {
 			//console.log("Error getting cached document:", error);
 		});
-		
+
 		//db warten
-		setTimeout(function (){		
-		
+		setTimeout(function (){
+
 			//userid den videoindex zuweisen
 			that.db.collection("IDs").doc(id).update({
 			"videoIndex": parseInt(databaseVideoIndex),
@@ -198,26 +198,45 @@ App = (function() {
 			})
 			//userid subIndex zuweisen (bsp video 2 auf liste dran) ^
 			userSubVideoIndex = 0;
-			
+
 			that.db.collection("videoIndex").doc(databaseIndexType).update({
 				"index": parseInt(databaseVideoIndex)+1
-			})		
+			})
 		}, 999); //timeout required for database to answer
-		
+
 	} else if (userVideoIndex == 1000) {
 		console.log("error");
 	} else {
 		//todo data aus db ziehen
 		console.log("todo load data");
 	}
-			
+
 	setTimeout(function (){
 		//console.log(videoIdArray[databaseVideoIndex]); //videolink ist hier -> in sessionStorage (?)
 		window.location.href="video.html"; //wenn getData ein ergebnis für bereits gesehene videos bringt überspringen?
 	}, 2000); //timeout required for database to answer
-	
+
   }
 
   that.init = init;
   return that;
 }());
+
+
+
+
+$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            // alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            window.location = '2_video_Geschichte.html'
+        }
+    })
+})

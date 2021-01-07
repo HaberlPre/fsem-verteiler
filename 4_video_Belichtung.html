@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>-->
+    <title>UR: Forschungsseminar</title>
+    <meta name="author" content="Lucas Haberl" />
+    <meta name="description" content="Videoverteiler & Balancer" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="" id="navigation-bar">
+      <div class="w3-bar w3-white w3-card navigation-bar" id="">
+        <div class="w3-bar-item w3-wide"><img class="logo" src="img/ur-logo-bildmarke-grau.png" /> Forschungsseminar</div>
+      </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="w3-container" style="padding: 128px 16px;">
+      <div class="lernvideo w3-container w3-center">
+        <h3 class="w3-center">Hallo (Thema 3: Belichtung )</h3>
+        <p class="w3-center w3-large">Bitte schauen Sie sich das Video vollständig an. Klicken Sie erst danach auf "Weiter".</p>
+        <p></p>
+
+        <div class="w3-container w3-center iframe-container">
+          <p class="">(Das ist nur ein Beispielvideo)</p>
+          <p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aqz-KE-bpKQ" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+          </p>
+        </div>
+
+        <div id="schoolIdDiv" class="w3-center">
+          <button id="fragebogen">zum Fragebogen (Lucas) - BITTE NICHT BENUTZEN --> Video und Test auf gleicher Seite</button>
+        </div>
+
+        <button class="w3-button w3-black" onclick="showWissensfragebogen();">Weiter</button>
+      </div>
+
+      <div class="wissensfragebogen w3-container hidden">
+        <!-- Test Google-Form zum Video -->
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdsiDvcDVfvlvb2ZgypIgj5zd1KSWY0MveHKvCV3bPZMGtELQ/formResponse" target="_self" id="bootstrapForm" method="POST">
+          <fieldset>
+            <h2>
+              Platzhalterfragebogen<br />
+              <small>Blablabla das ist die Beschreibung des Fragebogens. Er dient zudem nur zu Testzwecken und wird als Platzhalter verwendet.</small>
+            </h2>
+          </fieldset>
+
+          <!-- Field type: "short" id: "140902380" -->
+          <fieldset>
+            <legend for="140902380">ID</legend>
+            <div class="form-group">
+              <input id="94996532" type="text" name="entry.94996532" class="form-control" required />
+            </div>
+          </fieldset>
+
+          <!-- Field type: "short" id: "1135896430" -->
+          <fieldset>
+            <legend for="1135896430">Bitte geben Sie einen random Input ein.</legend>
+            <div class="form-group">
+              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required />
+            </div>
+          </fieldset>
+
+          <input type="hidden" name="fvv" value="1" />
+          <input type="hidden" name="fbzx" value="7951808529377160661" />
+          <!--
+CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+-->
+          <input type="hidden" name="pageHistory" value="0" />
+
+          <input class="w3-button w3-black btn btn-primary" style="margin-top: 16px;" type="submit" value="Fragebogen abgeben & zum nächsten Video (BITTE DIESEN BUTTON FÜR DEINE FUNKTIONEN BENUTZEN)" />
+        </form>
+      </div>
+
+      <div>
+        <label id="output"></label>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64">
+      <p>2021 - UNIVERSITÄT REGENSBURG</p>
+      <!-- <p><a href="https://www.uni-regensburg.de/" title="Startseite der Universität Regensburg" target="_blank" class="w3-hover-text-blue">Homepage</a></p> -->
+    </footer>
+
+    <!-- Skripte-->
+    <script src="js/4_video_Belichtung.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <!-- orig 8.2.1 causes error -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script> -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+			 https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script> also error ^ -->
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDKBgDG0cFsAA8qZe_LmcG2SZWv3LA_Lso",
+        authDomain: "forschungs-sem.firebaseapp.com",
+        projectId: "forschungs-sem",
+        storageBucket: "forschungs-sem.appspot.com",
+        messagingSenderId: "280864368745",
+        appId: "1:280864368745:web:ca0eaa165e0d18a5661af8",
+        measurementId: "G-ELCQKC7NEQ",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      //firebase.analytics();
+      App.init(firebase);
+    </script>
+  </body>
+</html>
