@@ -24,15 +24,20 @@ App = (function() {
   
   function setID() {
 	that.db.collection("IDs").doc(id).set({
-	"name": id
+	"name": id,
+	"subVideoIndex": 998,
+	"videoIndex": 999
 	})
-	supplyVideo();
+	supplyPreQuestionnaire();
   }
   
   function getData() {
 	var ref = that.db.collection("IDs").doc(id);
 	ref.get().then(function(doc) {
-      console.log(doc.data());
+      //console.log(Object.values(doc.data()));
+	  //sessionStorage.setItem("userData", Object.values(doc.data()));
+	  sessionStorage.setItem("userSubID", doc.data().subVideoIndex);
+	  sessionStorage.setItem("userVideoID", doc.data().videoIndex);
     }).catch(function(error) {
         //console.log("Error getting cached document:", error);
     });
@@ -45,6 +50,7 @@ App = (function() {
 	idButton.addEventListener("click", function() {
       id = idInput.value;
 	  console.log(id);
+	  sessionStorage.setItem("userID", id);
 	  checkDBforID();
     });
 	
@@ -52,6 +58,7 @@ App = (function() {
 	  if (event.keyCode === 13) {
 		id = idInput.value;
 		console.log(id);
+		sessionStorage.setItem("userID", id);
 		checkDBforID();
 	  }
 	});
@@ -71,7 +78,7 @@ App = (function() {
 	setTimeout(function (){
 		if(idArray.includes(id)) {
 			console.log("video");
-			supplyVideo();
+			supplyPreQuestionnaire();
 		} else {
 			console.log("setid");
 			setID();
@@ -79,12 +86,20 @@ App = (function() {
     }, 1000); //timeout required for database to answer
   }
   
-  function supplyVideo() {
+  function supplyPreQuestionnaire() { 
 	getData();
 	//balancing
-	document.getElementById('output').innerHTML = 'Hier könnte dein Link stehen';
+	//document.getElementById('output').innerHTML = 'Hier könnte dein Link stehen';
 	//console.log("video");
+	
+	//zur neuen Seite //auf db warten
+	setTimeout(function (){
+		window.location.href="vorfragebogen.html"; //wenn getData ein ergebnis dafür bringt überspringen?
+	}, 1000); //timeout required for database to answer
+
   }
+  
+  //TODO: getData eig nur nötig, wenn user Seite schließen können soll -> nützlich aber viel mehraufwand
 
   that.init = init;
   return that;
