@@ -11,7 +11,8 @@ App = (function() {
   databaseIndexType = "testIndex", //bei release "liveIndex"
   databaseVideoIndex = 1000,
   userVideoIndex = 1000,
-  userSubVideoIndex = 1000;
+  userSubVideoIndex = 1000,
+  logStr;
 
   function init(firebase) {
 	console.log("hola bogen");
@@ -23,6 +24,7 @@ App = (function() {
 	//console.log(sessionStorage.getItem("userVideoID")); //default: name, subVideoIndex = 998, videoIndex = 999
 	userVideoIndex = sessionStorage.getItem("userVideoID");
 	userSubVideoIndex = sessionStorage.getItem("userSubID");
+  logStr = sessionStorage.getItem("logStr");
   }
 
   function setupVideoIds() {
@@ -30,47 +32,47 @@ App = (function() {
 
 	  //Video 1
 		//permutation 1: gut schlecht
-		//let v1_1 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v1_1 = "v1_1";
+		let v1_1 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v1_1 = "v1_1";
 		//permutation 2: schlecht gut
-		//let v1_2 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v1_2 = "v1_2";
+		let v1_2 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v1_2 = "v1_2";
 		//permtation 3: schlecht schlecht
-		//let v1_3 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v1_3 = "v1_3";
+		let v1_3 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v1_3 = "v1_3";
 
 	  //Video 2
 		//permutation 1: pip
-		//let v2_1 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v2_1 = "v2_1";
+		let v2_1 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v2_1 = "v2_1";
 		//permutation 2: slides
-		//let v2_2 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v2_2 = "v2_2";
+		let v2_2 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v2_2 = "v2_2";
 		//permutation 3: cam
-		//let v2_3 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v2_3 = "v2_3";
+		let v2_3 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v2_3 = "v2_3";
 
 	  //Video 3
 		//permutation 1: gut schlecht
-		//let v3_1 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v3_1 = "v3_1";
+		let v3_1 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v3_1 = "v3_1";
 		//permutation 2: schlecht gut
-		//let v3_2 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v3_2 = "v3_2";
+		let v3_2 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v3_2 = "v3_2";
 		//permutation 3: schlecht schlecht
-		//let v3_3 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v3_3 = "v3_3";
+		let v3_3 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v3_3 = "v3_3";
 
 	  //Video 4
 		//permutation 1: pip
-		//let v4_1 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v4_1 = "v4_1";
+		let v4_1 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v4_1 = "v4_1";
 		//permutation 2: slides
-		//let v4_2 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v4_2 = "v4_2";
+		let v4_2 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v4_2 = "v4_2";
 		//permutation 3: cam
-		//let v4_3 = "https://www.youtube.com/watch?v=NG-1ju-N1t8&feature=youtu.be";
-		let v4_3 = "v4_3";
+		let v4_3 = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		//let v4_3 = "v4_3";
 
 		/*let v1Array = [v1_1, v1_2, v1_3], //videoArrays
 		v2Array = [v2_1, v2_2, v2_3],
@@ -202,19 +204,27 @@ App = (function() {
 			that.db.collection("videoIndex").doc(databaseIndexType).update({
 				"index": parseInt(databaseVideoIndex)+1
 			})
+
+      //console.log(videoIdArray[databaseVideoIndex]);
+      //console.log(videoIdArray[databaseVideoIndex][0]);
+      sessionStorage.setItem("videoLink1", videoIdArray[databaseVideoIndex][0]);
+      sessionStorage.setItem("videoLink2", videoIdArray[databaseVideoIndex][1]);
+      sessionStorage.setItem("videoLink3", videoIdArray[databaseVideoIndex][2]);
+      sessionStorage.setItem("videoLink4", videoIdArray[databaseVideoIndex][3]);
+
 		}, 999); //timeout required for database to answer
 
 	} else if (userVideoIndex == 1000) {
 		console.log("error");
 	} else {
 		//todo data aus db ziehen
-		console.log("todo load data");
+		console.log("todo load data - geht? vgl index -> app -> getData");
 	}
 
-	setTimeout(function (){
+	/*setTimeout(function (){
 		//console.log(videoIdArray[databaseVideoIndex]); //videolink ist hier -> in sessionStorage (?)
 		window.location.href="video.html"; //wenn getData ein ergebnis für bereits gesehene videos bringt überspringen?
-	}, 2000); //timeout required for database to answer
+	}, 2000); //timeout required for database to answer*/
 
   }
 
@@ -236,7 +246,11 @@ $('#bootstrapForm').submit(function (event) {
             // does not support it, so this is handled as a failure.
             // alert('Form Submitted. Thanks.')
             // You can also redirect the user to a custom thank-you page:
-            window.location = '2_video_Geschichte.html'
+            //window.location = '2_video_Geschichte.html'
+            setTimeout(function (){ //auf db warten
+              //console.log(videoIdArray[databaseVideoIndex]); //videolink ist hier -> in sessionStorage (?)
+              window.location.href= '2_video_Geschichte.html'; //wenn getData ein ergebnis für bereits gesehene videos bringt überspringen?
+            }, 2500); //timeout required for database to answer
         }
     })
 })

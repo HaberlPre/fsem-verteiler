@@ -26,7 +26,8 @@ App = (function() {
 	that.db.collection("IDs").doc(id).set({
 	"name": id,
 	"subVideoIndex": 998,
-	"videoIndex": 999
+	"videoIndex": 999,
+  "logStr" : ""
 	})
 	supplyPreQuestionnaire();
   }
@@ -38,6 +39,7 @@ App = (function() {
 	  //sessionStorage.setItem("userData", Object.values(doc.data()));
 	  sessionStorage.setItem("userSubID", doc.data().subVideoIndex);
 	  sessionStorage.setItem("userVideoID", doc.data().videoIndex);
+    sessionStorage.setItem("logStr", doc.data().logStr);
     }).catch(function(error) {
         //console.log("Error getting cached document:", error);
     });
