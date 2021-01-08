@@ -6,12 +6,13 @@ App = (function() {
 
   var that = {},
   db,
-  id;
+  id,
+  pos;
 
   function init(firebase) {
-	console.log("hi");
+  	console.log("hi");
     initFirebase(firebase);
-	setupInput();
+  	setupInput();
   }
 
   function initFirebase(firebase) {
@@ -51,17 +52,17 @@ App = (function() {
 
 	idButton.addEventListener("click", function() {
       id = idInput.value;
-	  console.log(id);
-	  sessionStorage.setItem("userID", id);
-	  checkDBforID();
+  	  console.log(id);
+  	  sessionStorage.setItem("userID", id);
+  	  checkDBforID();
     });
 
 	idInput.addEventListener("keyup", function(event) {
 	  if (event.keyCode === 13) {
-		id = idInput.value;
-		console.log(id);
-		sessionStorage.setItem("userID", id);
-		checkDBforID();
+  		id = idInput.value;
+  		console.log(id);
+  		sessionStorage.setItem("userID", id);
+  		checkDBforID();
 	  }
 	});
   }
@@ -96,8 +97,24 @@ App = (function() {
 
 	//zur neuen Seite //auf db warten
 	setTimeout(function (){
-		window.location.href="1_vorfragebogen.html"; //wenn getData ein ergebnis dafür bringt überspringen?
-	}, 1000); //timeout required for database to answer
+    pos = parseInt(sessionStorage.getItem("userSubID"));
+    if (pos == 998) {
+  		window.location.href="1_vorfragebogen.html";
+    } else if (pos == 0) {
+      window.location.href="2_video_Geschichte.html";
+    } else if (pos == 1) {
+      window.location.href="3_video_Funktion.html";
+    } else if (pos == 2) {
+      window.location.href="4_video_Belichtung.html";
+    } else if (pos == 3) {
+      window.location.href="5_video_Brennweite.html";
+    } else if (pos == 4) {
+      window.location.href="6_Thankyou.html";
+    } else {
+      window.location.href="1_vorfragebogen.html";
+    }
+
+  	}, 1000); //timeout required for database to answer
 
   }
 
