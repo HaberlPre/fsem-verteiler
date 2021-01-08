@@ -20,12 +20,16 @@ body {
   min-height: 100%;
 }
 
-#navigation-bar {
+.navigation-bar-container{
   /* width: 100%; */
   position: -webkit-sticky; /*safari*/
   position: sticky;
   top: 0px;
   z-index: 2;
+}
+
+.navigation-bar{
+  padding: 8px 0px;
 }
 
 .logo {
@@ -37,9 +41,6 @@ body {
   display: none;
 }
 
-.navigation-bar{
-  padding: 8px 0px;
-}
 
 footer{
   position: absolute;
@@ -49,4 +50,47 @@ footer{
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+.content-container{
+  max-width: 1200px;
+  margin: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+input[type=submit] {
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    .progress-bar {
+       /* Remain on top */
+       /* position: fixed; */
+       /* top: 0; */
+
+       /* Thickness & Color */
+       height: 5px;
+       background: green;
+
+       /* How fast progress happens */
+       transition: width .25s;
+
+       /* Display on top of everything */
+       z-index:9999;
+
+    }
+
+
+
+
+
+.iframe-container{
+  max-width: 560px;
+  /* max-height: 315px; */
+  margin: auto;
+}
+
+iframe{
+  width: 100%;
 }
