@@ -43,7 +43,7 @@
           <fieldset>
             <legend for="140902380">ID</legend>
             <div class="form-group">
-              <input id="94996532" type="text" name="entry.94996532" class="form-control" required />
+              <input id="94996532" type="text" name="entry.94996532" class="form-control" required oninput="validateInputs();" />
             </div>
           </fieldset>
 
@@ -51,7 +51,7 @@
           <fieldset>
             <legend for="1135896430">Bitte geben Sie einen random Input ein.</legend>
             <div class="form-group">
-              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required />
+              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required oninput="validateInputs();" />
             </div>
           </fieldset>
 
@@ -65,7 +65,7 @@
     -->
           <input type="hidden" name="pageHistory" value="0" />
 
-          <input id="startStudy" class="w3-button w3-black btn btn-primary" style="margin-top: 16px;" type="submit" value="Fragebogen abgeben & zum ersten Video" />
+          <input id="startStudy" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & zum ersten Video" disabled />
         </form>
       </div>
 
@@ -82,6 +82,7 @@
 
     <!-- Skripte-->
     <script src="js/1_vorfragebogen.js"></script>
+    <script src="js/common.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
     <!-- orig 8.2.1 causes error -->

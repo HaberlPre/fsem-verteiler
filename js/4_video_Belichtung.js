@@ -65,6 +65,8 @@ App = (function() {
   return that;
 }());
 
+
+// Google Form Code
 $('#bootstrapForm').submit(function (event) {
     event.preventDefault()
     var extraData = {}
@@ -84,15 +86,3 @@ $('#bootstrapForm').submit(function (event) {
         }
     })
 });
-
-
-let lernvideo = document.querySelector(".lernvideo"),
-    wissensfragebogen = document.querySelector(".wissensfragebogen");
-
-function showWissensfragebogen(){
-  let result = confirm("Haben Sie das Video komplett angeschaut?");
-  if(result){
-    lernvideo.classList.add("hidden");
-    wissensfragebogen.classList.remove("hidden");
-  }
-}

@@ -29,14 +29,14 @@
       <h3 class="w3-center">Hallo (Thema 3: Belichtung )</h3>
       <div class="lernvideo w3-container w3-center">
 
-        <p class="w3-center w3-large">Bitte schauen Sie sich das Video vollständig an. Klicken Sie erst danach auf "Weiter".</p>
-        <p></p>
+        <p class="w3-center w3-large">Bitte sehen Sie sich das Video vollständig an. Klicken Sie erst danach auf "Weiter".</p>
+        <p class="w3-medium">Wenn Sie auf "Weiter" klicken, verschwindet das Video und ein Fragebogen wird auftauchen. </p>
+        <p class="w3-medium"><b>Versuchen Sie danach das Video NICHT wieder aufzurufen! Also navigieren Sie NICHT im Browser zurück.</b></p>
 
         <div class="iframe-container w3-center">
-          <p class="">(Das ist nur ein Beispielvideo)</p>
-          <p>
-            <iframe id="videoiFrame"  src="https://www.youtube.com/embed/aqz-KE-bpKQ" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-          </p>
+
+          <iframe id="videoiFrame"  src="https://www.youtube.com/embed/aqz-KE-bpKQ" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
+
         </div>
 
         <button id="zumFragebogen" class="w3-button w3-black" onclick="showWissensfragebogen();">Weiter</button>
@@ -56,7 +56,7 @@
           <fieldset>
             <legend for="140902380">ID</legend>
             <div class="form-group">
-              <input id="94996532" type="text" name="entry.94996532" class="form-control" required />
+              <input id="94996532" type="text" name="entry.94996532" class="form-control" required oninput="validateInputs();" />
             </div>
           </fieldset>
 
@@ -64,7 +64,7 @@
           <fieldset>
             <legend for="1135896430">Bitte geben Sie einen random Input ein.</legend>
             <div class="form-group">
-              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required />
+              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required oninput="validateInputs();" />
             </div>
           </fieldset>
 
@@ -78,7 +78,7 @@ We're setting this to the total number of pages in this form because we're sendi
 -->
           <input type="hidden" name="pageHistory" value="0" />
 
-          <input id="nextVideo" class="w3-button w3-black btn btn-primary" style="margin-top: 16px;" type="submit" value="Fragebogen abgeben & Weiter" />
+          <input id="nextVideo" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & Weiter" disabled />
         </form>
       </div>
 
@@ -95,6 +95,7 @@ We're setting this to the total number of pages in this form because we're sendi
 
     <!-- Skripte-->
     <script src="js/4_video_Belichtung.js"></script>
+    <script src="js/common.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
     <!-- orig 8.2.1 causes error -->

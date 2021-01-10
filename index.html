@@ -34,8 +34,8 @@
       <p class="w3-center w3-large">Sie wird folgendermaßen zusammengesetzt:  [...]</p>
 
       <div id="schoolIdDiv" class="w3-center">
-        Ihre ID: <input type="text" id="idInput" /><br />
-        <button id="idInputButton" class="w3-button w3-black" style="margin-top: 8px;">Studie starten</button>
+        Ihre ID: <input type="text" id="idInput" required oninput="validateInputs();"/><br />
+        <input type="submit" id="idInputButton" class="w3-button w3-black" style="margin-top: 8px;" value="Studie starten" disabled />
       </div>
       <div>
         <label id="output"></label>
@@ -50,6 +50,7 @@
 
     <!-- Skripte-->
     <script src="js/App.js"></script>
+    <script src="js/common.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
     <!-- orig 8.2.1 causes error -->
