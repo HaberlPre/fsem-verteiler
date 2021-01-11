@@ -22,7 +22,7 @@ App = (function() {
 	console.log(id);
   document.getElementById("94996532").value = id; //value bei finalem Bogen anpassen
 	setupVideoIds();
-	//console.log(sessionStorage.getItem("userVideoID")); //default: name, subVideoIndex = 998, videoIndex = 999
+	console.log(sessionStorage.getItem("userVideoID")); //default: name, subVideoIndex = 998, videoIndex = 999
 	userVideoIndex = sessionStorage.getItem("userVideoID");
 	userSubVideoIndex = sessionStorage.getItem("userSubID");
   logStr = sessionStorage.getItem("logStr");
@@ -206,6 +206,13 @@ App = (function() {
 				"index": parseInt(databaseVideoIndex)+1
 			})
 
+      if (databaseVideoIndex > 71) {
+        databaseVideoIndex -= 72;
+      } else if (databaseVideoIndex > 35) {
+        databaseVideoIndex -= 36;
+      }
+      console.log(databaseVideoIndex);
+
       //console.log(videoIdArray[databaseVideoIndex]);
       //console.log(videoIdArray[databaseVideoIndex][0]);
       sessionStorage.setItem("videoLink1", videoIdArray[databaseVideoIndex][0]);
@@ -213,6 +220,13 @@ App = (function() {
       sessionStorage.setItem("videoLink3", videoIdArray[databaseVideoIndex][2]);
       sessionStorage.setItem("videoLink4", videoIdArray[databaseVideoIndex][3]);
 
+
+      that.db.collection("IDs").doc(id).update({
+      "videoLink1": videoIdArray[databaseVideoIndex][0],
+      "videoLink2": videoIdArray[databaseVideoIndex][1],
+      "videoLink3": videoIdArray[databaseVideoIndex][2],
+      "videoLink4": videoIdArray[databaseVideoIndex][3],
+      })
 		}, 999); //timeout required for database to answer
 
 	} else if (userVideoIndex == 1000) {
@@ -220,6 +234,12 @@ App = (function() {
 	} else {
 		//todo data aus db ziehen
 		console.log("todo load data - geht? vgl index -> app -> getData");
+    if (databaseVideoIndex > 71) {
+      databaseVideoIndex -= 72;
+    } else if (databaseVideoIndex > 35) {
+      databaseVideoIndex -= 36;
+    }
+    console.log(databaseVideoIndex);
 	}
 
 	/*setTimeout(function (){
