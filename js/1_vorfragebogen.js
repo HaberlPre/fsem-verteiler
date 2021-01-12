@@ -16,16 +16,40 @@ App = (function() {
 
   function init(firebase) {
 	console.log("hola bogen");
-    initFirebase(firebase);
+  initFirebase(firebase);
 	setupInput();
 	id = sessionStorage.getItem("userID");
 	console.log(id);
+  loadIDs();
   document.getElementById("94996532").value = id; //value bei finalem Bogen anpassen
 	setupVideoIds();
 	console.log(sessionStorage.getItem("userVideoID")); //default: name, subVideoIndex = 998, videoIndex = 999
 	userVideoIndex = sessionStorage.getItem("userVideoID");
 	userSubVideoIndex = sessionStorage.getItem("userSubID");
   logStr = sessionStorage.getItem("logStr");
+  }
+
+  function loadIDs() {
+    var ref = that.db.collection("IDs").doc(id);
+    ref.get().then(function(doc) {
+        //console.log(Object.values(doc.data()));
+      //sessionStorage.setItem("userData", Object.values(doc.data()));
+      sessionStorage.setItem("userSubID", doc.data().subVideoIndex);
+      var wipIndex = doc.data().videoIndex;
+      console.log(wipIndex);
+      if (wipIndex < 900 && wipIndex > 71) { //eig nichtmehr nötig
+        wipIndex -= 72;
+      } else if (wipIndex < 900 && wipIndex > 35) {
+        wipIndex -= 36;
+      }
+      console.log(wipIndex);
+      sessionStorage.setItem("userVideoID", wipIndex);
+      userVideoIndex = wipIndex;
+    }).catch(function(error) {
+        //console.log("Error getting cached document:", error);
+    });
+    console.log(sessionStorage.getItem("userVideoID")); //default: name, subVideoIndex = 998, videoIndex = 999
+
   }
 
   function setupVideoIds() {
@@ -174,80 +198,73 @@ App = (function() {
 
 
   function supplyVideo() {
-	//balancing
-	//document.getElementById('output').innerHTML = 'Hier könnte dein Link stehen';
-	//console.log("video");
+    //balancing
+    //document.getElementById('output').innerHTML = 'Hier könnte dein Link stehen';
+    //console.log("video");
 
-	//todo: videos zuweisen
+    //todo: videos zuweisen
 
-	//zuvor schauen ob user schon index zugewiesen bekommen hat?
-	if (userVideoIndex == 999) {
-		//aktuellen videoIndex aus DB ziehen
-		var getIndexRef = that.db.collection("videoIndex").doc(databaseIndexType);
-		getIndexRef.get().then(function(doc) {
-		  databaseVideoIndex = doc.data().index;
-		  console.log(databaseVideoIndex);
-		}).catch(function(error) {
-			//console.log("Error getting cached document:", error);
-		});
+    //zuvor schauen ob user schon index zugewiesen bekommen hat?
+    if (userVideoIndex == 999) {
+    	//aktuellen videoIndex aus DB ziehen
+    	var getIndexRef = that.db.collection("videoIndex").doc(databaseIndexType);
+    	getIndexRef.get().then(function(doc) {
+    	  databaseVideoIndex = doc.data().index;
+    	  console.log(databaseVideoIndex);
+    	}).catch(function(error) {
+    		//console.log("Error getting cached document:", error);
+    	});
+      //}
+		    //db warten
+  		setTimeout(function (){
 
-		//db warten
-		setTimeout(function (){
+  			//userid den videoindex zuweisen
+  			that.db.collection("IDs").doc(id).update({
+  			"videoIndex": parseInt(databaseVideoIndex),
+  			"subVideoIndex": 0
+  			})
+  			//userid subIndex zuweisen (bsp video 2 auf liste dran) ^
+  			userSubVideoIndex = 0;
 
-			//userid den videoindex zuweisen
-			that.db.collection("IDs").doc(id).update({
-			"videoIndex": parseInt(databaseVideoIndex),
-			"subVideoIndex": 0
-			})
-			//userid subIndex zuweisen (bsp video 2 auf liste dran) ^
-			userSubVideoIndex = 0;
+  			that.db.collection("videoIndex").doc(databaseIndexType).update({
+  				"index": parseInt(databaseVideoIndex)+1
+  			})
 
-			that.db.collection("videoIndex").doc(databaseIndexType).update({
-				"index": parseInt(databaseVideoIndex)+1
-			})
+        if (databaseVideoIndex > 71) {
+          databaseVideoIndex -= 72;
+        } else if (databaseVideoIndex > 35) {
+          databaseVideoIndex -= 36;
+        }
+        console.log(databaseVideoIndex);
 
-      if (databaseVideoIndex > 71) {
+        //console.log(videoIdArray[databaseVideoIndex]);
+        //console.log(videoIdArray[databaseVideoIndex][0]);
+        sessionStorage.setItem("videoLink1", videoIdArray[databaseVideoIndex][0]);
+        sessionStorage.setItem("videoLink2", videoIdArray[databaseVideoIndex][1]);
+        sessionStorage.setItem("videoLink3", videoIdArray[databaseVideoIndex][2]);
+        sessionStorage.setItem("videoLink4", videoIdArray[databaseVideoIndex][3]);
+
+        that.db.collection("IDs").doc(id).update({
+        "videoLink1": videoIdArray[databaseVideoIndex][0],
+        "videoLink2": videoIdArray[databaseVideoIndex][1],
+        "videoLink3": videoIdArray[databaseVideoIndex][2],
+        "videoLink4": videoIdArray[databaseVideoIndex][3],
+        })
+  		}, 999); //timeout required for database to answer
+
+  	} else if (userVideoIndex == 1000) {
+  		console.log("error");
+  	} else {
+  		//todo data aus db ziehen
+  		console.log("todo load data - geht? vgl index -> app -> getData");
+      if (databaseVideoIndex < 900 && databaseVideoIndex > 71) { //eig nichtmehr nötig
         databaseVideoIndex -= 72;
-      } else if (databaseVideoIndex > 35) {
+      } else if (databaseVideoIndex < 900 && databaseVideoIndex > 35) {
         databaseVideoIndex -= 36;
       }
-      console.log(databaseVideoIndex);
-
-      //console.log(videoIdArray[databaseVideoIndex]);
-      //console.log(videoIdArray[databaseVideoIndex][0]);
-      sessionStorage.setItem("videoLink1", videoIdArray[databaseVideoIndex][0]);
-      sessionStorage.setItem("videoLink2", videoIdArray[databaseVideoIndex][1]);
-      sessionStorage.setItem("videoLink3", videoIdArray[databaseVideoIndex][2]);
-      sessionStorage.setItem("videoLink4", videoIdArray[databaseVideoIndex][3]);
-
-
-      that.db.collection("IDs").doc(id).update({
-      "videoLink1": videoIdArray[databaseVideoIndex][0],
-      "videoLink2": videoIdArray[databaseVideoIndex][1],
-      "videoLink3": videoIdArray[databaseVideoIndex][2],
-      "videoLink4": videoIdArray[databaseVideoIndex][3],
-      })
-		}, 999); //timeout required for database to answer
-
-	} else if (userVideoIndex == 1000) {
-		console.log("error");
-	} else {
-		//todo data aus db ziehen
-		console.log("todo load data - geht? vgl index -> app -> getData");
-    if (databaseVideoIndex > 71) {
-      databaseVideoIndex -= 72;
-    } else if (databaseVideoIndex > 35) {
-      databaseVideoIndex -= 36;
     }
     console.log(databaseVideoIndex);
 	}
-
-	/*setTimeout(function (){
-		//console.log(videoIdArray[databaseVideoIndex]); //videolink ist hier -> in sessionStorage (?)
-		window.location.href="video.html"; //wenn getData ein ergebnis für bereits gesehene videos bringt überspringen?
-	}, 2000); //timeout required for database to answer*/
-
-  }
 
   that.init = init;
   return that;
@@ -268,7 +285,7 @@ $('#bootstrapForm').submit(function (event) {
             // You can also redirect the user to a custom thank-you page:
             //window.location = '2_video_Geschichte.html'
             setTimeout(function (){ //auf db warten
-              //console.log(videoIdArray[databaseVideoIndex]); //videolink ist hier -> in sessionStorage (?)
+              //console.log("neue seite"); //videolink ist hier -> in sessionStorage (?)
               window.location.href= '2_video_Geschichte.html'; //wenn getData ein ergebnis für bereits gesehene videos bringt überspringen?
             }, 2500); //timeout required for database to answer
         }
