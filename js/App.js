@@ -39,8 +39,22 @@ App = (function() {
       //console.log(Object.values(doc.data()));
 	  //sessionStorage.setItem("userData", Object.values(doc.data()));
 	  sessionStorage.setItem("userSubID", doc.data().subVideoIndex);
-	  sessionStorage.setItem("userVideoID", doc.data().videoIndex);
+    var wipIndex = doc.data().videoIndex;
+    console.log(wipIndex);
+    if (wipIndex < 900 && wipIndex > 71) { //eig nichtmehr nötig
+      wipIndex -= 72;
+    } else if (wipIndex < 900 && wipIndex > 35) {
+      wipIndex -= 36;
+    }
+    console.log(wipIndex);
+    sessionStorage.setItem("userVideoID", wipIndex);
+	  //sessionStorage.setItem("userVideoID", doc.data().videoIndex);
     sessionStorage.setItem("logStr", doc.data().logStr);
+
+    sessionStorage.setItem("videoLink1", doc.data().videoLink1);
+    sessionStorage.setItem("videoLink2", doc.data().videoLink2);
+    sessionStorage.setItem("videoLink3", doc.data().videoLink3);
+    sessionStorage.setItem("videoLink4", doc.data().videoLink4);
     }).catch(function(error) {
         //console.log("Error getting cached document:", error);
     });

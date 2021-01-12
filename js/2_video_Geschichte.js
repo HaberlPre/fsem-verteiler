@@ -18,7 +18,7 @@ App = (function() {
   document.getElementById("94996532").value = id; //value bei finalem Bogen anpassen
   setupInput();
   videoLink = sessionStorage.getItem("videoLink1");
-  //console.log(videoLink);
+  console.log(videoLink);
   document.getElementById("videoiFrame").src = videoLink;
   logStr = sessionStorage.getItem("logStr");
 
