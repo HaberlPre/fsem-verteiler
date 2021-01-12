@@ -65,6 +65,7 @@ App = (function() {
 	idInput = document.getElementById("idInput");
 
 	idButton.addEventListener("click", function() {
+      idButton.disabled = true;
       id = idInput.value;
   	  console.log(id);
   	  sessionStorage.setItem("userID", id);

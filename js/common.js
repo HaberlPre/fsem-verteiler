@@ -11,7 +11,6 @@
   }
 
 
-
   // Submit-Button nicht klickbar machen wenn nicht alles ausgefüllt
   let allRequiredInputs = document.querySelectorAll("input[required]");
   let submitButton = document.querySelector("input[type='submit']");
@@ -30,3 +29,9 @@
       submitButton.disabled = false;
     }
   }
+
+
+// Wenn html-Seite geladen hat, einmal Input validieren
+window.onload = function(){
+  validateInputs();
+}

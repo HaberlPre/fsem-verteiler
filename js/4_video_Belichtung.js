@@ -69,6 +69,7 @@ App = (function() {
 // Google Form Code
 $('#bootstrapForm').submit(function (event) {
     event.preventDefault()
+    document.querySelector("input[type='submit']").disabled = true;
     var extraData = {}
     $('#bootstrapForm').ajaxSubmit({
         data: extraData,
