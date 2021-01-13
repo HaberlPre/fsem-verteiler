@@ -226,9 +226,11 @@ App = (function() {
   			//userid subIndex zuweisen (bsp video 2 auf liste dran) ^
   			userSubVideoIndex = 0;
 
-  			that.db.collection("videoIndex").doc(databaseIndexType).update({
-  				"index": parseInt(databaseVideoIndex)+1
-  			})
+        if (databaseVideoIndex < 900) {
+    			that.db.collection("videoIndex").doc(databaseIndexType).update({
+    				"index": parseInt(databaseVideoIndex)+1
+    			})
+        }
 
         if (databaseVideoIndex > 71) {
           databaseVideoIndex -= 72;
