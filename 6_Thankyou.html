@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+
   </head>
   <body>
     <div class="navigation-bar-container">
@@ -23,8 +26,60 @@
 
     <!-- Main Section -->
     <div class="w3-container content-container" style="padding: 128px 16px;" id="about">
-      <h3 class="w3-center">Vielen Dank!</h3>
-      <p class="w3-center w3-large"></p>
+      <h3 class="w3-center w3-xlarge">Vielen Dank für Ihre Teilnahme!</h3>
+      <p class="w3-center">Wenn Sie Student an der Universität Regensburg sind und Versuchspersonenstunden anrechnen lassen möchten, geben Sie bitte folgende Daten ein und klicken Sie auf &quot;Fragebogen abgeben&quot;. Die eingegebenen Daten werden separat von den vorherigen Fragebögen gespeichert und lässt sich nicht auf Ihre Person zurückverfolgen. </p>
+      <p class="w3-center">Bei Fragen wenden Sie sich bitte an: Fabian.Feldmeier@stud.uni-regensburg.de oder Sabrina1.Hartl@stud.uni-regensburg.de</p>
+      <p class="w3-center">Ansonsten können Sie diese Seite nun schließen.</p>
+
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSfFR05A7SF6PoZFZUsLhycjNEyglBvLl5uroJuovziazilp4g/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>Versuchspersonenstunden</h2>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1074582840" -->
+    <fieldset>
+        <legend for="1074582840">Matrikelnummer</legend>
+        <div class="form-group">
+            <input id="537301155" type="text" name="entry.537301155" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1112110210" -->
+    <fieldset>
+        <legend for="1112110210">Familienname</legend>
+        <div class="form-group">
+            <input id="1121521769" type="text" name="entry.1121521769" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "233864758" -->
+    <fieldset>
+        <legend for="233864758">Vorname</legend>
+        <div class="form-group">
+            <input id="1587481286" type="text" name="entry.1587481286" class="form-control" required>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="-2792422797162848027">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input class="w3-button w3-black btn btn-primary" type="submit" value="Fragebogen abgeben">
+</form>
+
+<h3 class="w3-center w3-xlarge hidden" id="absendeBestaetigung">Ihre Angaben wurden gespeichert. Sie können diese Seite nun schließen.</h3>
 
       <div>
         <label id="output"></label>
@@ -36,5 +91,8 @@
       <p>2021 - UNIVERSITÄT REGENSBURG</p>
       <!-- <p><a href="https://www.uni-regensburg.de/" title="Startseite der Universität Regensburg" target="_blank" class="w3-hover-text-blue">Homepage</a></p> -->
     </footer>
+
+    <!-- Skripte -->
+    <script src="js/6_Thankyou.js"></script>
   </body>
 </html>
