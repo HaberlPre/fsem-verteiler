@@ -6,6 +6,7 @@
     let result = confirm("Haben Sie das Video komplett angeschaut?");
     if(result){
       lernvideo.classList.add("hidden");
+      lernvideo.remove();
       wissensfragebogen.classList.remove("hidden");
     }
   }
