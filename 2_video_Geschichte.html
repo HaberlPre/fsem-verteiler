@@ -45,42 +45,143 @@
 
       <div class="wissensfragebogen w3-container hidden">
         <!-- Test Google-Form zum Video -->
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdsiDvcDVfvlvb2ZgypIgj5zd1KSWY0MveHKvCV3bPZMGtELQ/formResponse" target="_self" id="bootstrapForm" method="POST">
-          <fieldset>
-            <h2>
-              Platzhalterfragebogen<br />
-              <small>Blablabla das ist die Beschreibung des Fragebogens. Er dient zudem nur zu Testzwecken und wird als Platzhalter verwendet.</small>
-            </h2>
-          </fieldset>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfXljxZmywBNLO868jKIy9TkyUzIYY6fbGIzpd3ZvY0SXrXbQ/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>Fragen zum Video 1 &quot;Geschichte&quot;<br><small></small></h2>
+    </fieldset>
 
-          <!-- Field type: "short" id: "140902380" -->
-          <fieldset>
-            <legend for="140902380">ID</legend>
-            <div class="form-group">
-              <input id="94996532" type="text" name="entry.94996532" class="form-control" required oninput="validateInputs();" />
+
+    <!-- Field type: "short" id: "2116190066" -->
+    <fieldset>
+        <legend for="2116190066">Nutzer-ID</legend>
+        <div class="form-group">
+            <input id="1424265469" type="text" name="entry.1424265469" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "440822788" -->
+    <fieldset>
+        <legend for="440822788">Was ist die Kamera Obscura und wie ist ihr Funktionsprinzip?</legend>
+        <div class="form-group">
+            <textarea id="140214093" name="entry.140214093" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1954980583" -->
+    <fieldset>
+        <legend for="1954980583">In welchen Zeitraum wurden die ersten Digitalkameras für Consumer zugänglich?</legend>
+        <div class="form-group">
+            <input id="660884463" type="text" name="entry.660884463" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "22278164" -->
+    <fieldset>
+        <legend for="22278164">Welche Messe beschäftigt sich seit 1950 mit allem rund um Fotografie?</legend>
+        <div class="form-group">
+            <input id="1066176149" type="text" name="entry.1066176149" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "2070601505" -->
+    <fieldset>
+        <legend for="2070601505">Welche Eigenschaft mussten die Belichteten Materialien aufweisen, damit  es möglich war, auch schnellere Bewegungen einzufangen? </legend>
+        <div class="form-group">
+            <textarea id="610245827" name="entry.610245827" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "checkboxes" id: "2142405029" -->
+    <fieldset>
+        <legend for="2142405029">Aktuelle Smartphones haben teilweise schon:</legend>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.1575502954" value="MicroFourThirds Sensoren" >
+                    MicroFourThirds Sensoren
+                </label>
             </div>
-          </fieldset>
-
-          <!-- Field type: "short" id: "1135896430" -->
-          <fieldset>
-            <legend for="1135896430">Bitte geben Sie einen random Input ein.</legend>
-            <div class="form-group">
-              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required oninput="validateInputs();" />
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.1575502954" value="Die gleiche Vorschau wie professionelle Kameras" >
+                    Die gleiche Vorschau wie professionelle Kameras
+                </label>
             </div>
-          </fieldset>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.1575502954" value="Verschiedene Brennweiten" >
+                    Verschiedene Brennweiten
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.1575502954" value="Die gleiche Pixelgröße wie wie Vollformat-Kameras" >
+                    Die gleiche Pixelgröße wie wie Vollformat-Kameras
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.1575502954" value="Einen Mechanischen Shutter" >
+                    Einen Mechanischen Shutter
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.1575502954" value="Ähnliche Auflösung wie Spiegelreflexkameras" >
+                    Ähnliche Auflösung wie Spiegelreflexkameras
+                </label>
+            </div>
+        </div>
+    </fieldset>
 
-          <input type="hidden" name="fvv" value="1" />
-          <input type="hidden" name="fbzx" value="7951808529377160661" />
-          <!--
-CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
--->
-          <input type="hidden" name="pageHistory" value="0" />
 
-          <input id="nextVideo" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & Weiter" disabled />
-        </form>
+    <!-- Field type: "paragraph" id: "1931638574" -->
+    <fieldset>
+        <legend for="1931638574">Was ist das besondere an einer Lichtfeldkamera? </legend>
+        <div class="form-group">
+            <textarea id="1211734185" name="entry.1211734185" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "1012430412" -->
+    <fieldset>
+        <legend for="1012430412">Aufgrund von welchen technischen Limitationen wirken Personen auf älteren Fotografien (19. Jhd) oft steif?</legend>
+        <div class="form-group">
+            <textarea id="704647068" name="entry.704647068" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "709098490" -->
+    <fieldset>
+        <legend for="709098490">Nennen Sie zwei Beispiele für aktuelle Entwicklungen der Fotografie? </legend>
+        <div class="form-group">
+            <textarea id="733027287" name="entry.733027287" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="-8010929779946972243">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input id="nextVideo" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & Weiter" />
+</form>
+
       </div>
 
       <div>

@@ -45,42 +45,127 @@
 
       <div class="wissensfragebogen w3-container hidden">
         <!-- Test Google-Form zum Video -->
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdsiDvcDVfvlvb2ZgypIgj5zd1KSWY0MveHKvCV3bPZMGtELQ/formResponse" target="_self" id="bootstrapForm" method="POST">
-          <fieldset>
-            <h2>
-              Platzhalterfragebogen<br />
-              <small>Blablabla das ist die Beschreibung des Fragebogens. Er dient zudem nur zu Testzwecken und wird als Platzhalter verwendet.</small>
-            </h2>
-          </fieldset>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdw9yl-2siyNCR4TDFMCuQSjYUh-OSQeaAY5jX7xDXA3tlBTw/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>Fragen zum Video 2 &quot;Funktionsweise&quot;<br><small></small></h2>
+    </fieldset>
 
-          <!-- Field type: "short" id: "140902380" -->
-          <fieldset>
-            <legend for="140902380">ID</legend>
-            <div class="form-group">
-              <input id="94996532" type="text" name="entry.94996532" class="form-control" required oninput="validateInputs();" />
+
+    <!-- Field type: "short" id: "768514701" -->
+    <fieldset>
+        <legend for="768514701">Nutzer-ID</legend>
+        <div class="form-group">
+            <input id="1819241437" type="text" name="entry.1819241437" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "choices" id: "41374983" -->
+    <fieldset>
+        <legend for="41374983">Welchen Weg geht das Licht beim Fotografieren durch eine Spiegelreflexkamera?</legend>
+        <div class="form-group">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.1917589105" value="Spiegel -&gt; Prisma -&gt; Verschluss -&gt; Sensor" >
+                    Spiegel -&gt; Prisma -&gt; Verschluss -&gt; Sensor
+                </label>
             </div>
-          </fieldset>
-
-          <!-- Field type: "short" id: "1135896430" -->
-          <fieldset>
-            <legend for="1135896430">Bitte geben Sie einen random Input ein.</legend>
-            <div class="form-group">
-              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required oninput="validateInputs();" />
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.1917589105" value="Spiegel -&gt; Linsen -&gt; Sensor" >
+                    Spiegel -&gt; Linsen -&gt; Sensor
+                </label>
             </div>
-          </fieldset>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.1917589105" value="Verschluss -&gt; Linsen -&gt; Spiegel -&gt; Sensor" >
+                    Verschluss -&gt; Linsen -&gt; Spiegel -&gt; Sensor
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.1917589105" value="Linsen -&gt; Verschluss -&gt; Sensor" >
+                    Linsen -&gt; Verschluss -&gt; Sensor
+                </label>
+            </div>
+        </div>
+    </fieldset>
 
-          <input type="hidden" name="fvv" value="1" />
-          <input type="hidden" name="fbzx" value="7951808529377160661" />
-          <!--
-CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
--->
-          <input type="hidden" name="pageHistory" value="0" />
 
-          <input id="nextVideo" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & Weiter" disabled />
-        </form>
+    <!-- Field type: "short" id: "979303578" -->
+    <fieldset>
+        <legend for="979303578">Wie heißen die drei Hauptelemente einer Kamera?</legend>
+        <div class="form-group">
+            <input id="772854189" type="text" name="entry.772854189" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "2032284338" -->
+    <fieldset>
+        <legend for="2032284338">Wie unterscheidet sich der Prozess zwischen Analog- und Digitalfotografie von der Aufnahme des Bildes bis man es korrekt Dargestellt betrachten kann?</legend>
+        <div class="form-group">
+            <textarea id="754306983" name="entry.754306983" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "493793361" -->
+    <fieldset>
+        <legend for="493793361">Definieren Sie “Auflösung” im Bezug auf ein Foto und nennen Sie die gängigste Größenangabe um diese zu beschreiben.</legend>
+        <div class="form-group">
+            <textarea id="624767778" name="entry.624767778" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "1869035175" -->
+    <fieldset>
+        <legend for="1869035175">Wie benutzt das iPhone 12 einen 12 MP Sensor, erzeugt aber trotzdem gute Bilder?</legend>
+        <div class="form-group">
+            <textarea id="914011965" name="entry.914011965" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "656133645" -->
+    <fieldset>
+        <legend for="656133645">Beschriften Sie die im nachfolgenden Schaubild dargestellten Elemente einer Kamera. Nennen Sie hierzu immer die Nummer und die zugehörige Bezeichnung.</legend>
+        <figure>
+          <img src="img/test2bild1.png" alt="Elemente einer Kamera" style="width:100%">
+          <figcaption class="w3-tiny">Quelle: https://www.reddit.com/r/pics/comments/64tr3s/a_dslr_camera_cut_in_half/</figcaption>
+        </figure>
+        <div class="form-group">
+            <textarea id="1853753145" name="entry.1853753145" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "721036894" -->
+    <fieldset>
+        <legend for="721036894">Nennen Sie zwei Vorteile von Zoomobjektiven und Festbrennweiten.</legend>
+        <div class="form-group">
+            <textarea id="1561738573" name="entry.1561738573" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="-6591172514806607523">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input id="nextVideo" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & Weiter"/>
+
+</form>
+
       </div>
 
       <div>

@@ -99,6 +99,10 @@ iframe{
   margin-top: 16px;
 }
 
+figure{
+  max-width: 640px;
+}
+
 
 
 

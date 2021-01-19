@@ -15,7 +15,7 @@ App = (function() {
   initFirebase(firebase);
   id = sessionStorage.getItem("userID");
   console.log(id);
-  document.getElementById("94996532").value = id; //value bei finalem Bogen anpassen
+  document.getElementById("530808667").value = id; //value bei finalem Bogen anpassen
   setupInput();
   videoLink = sessionStorage.getItem("videoLink4");
   //console.log(videoLink);

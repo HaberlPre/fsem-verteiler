@@ -44,42 +44,183 @@
 
       <div class="wissensfragebogen w3-container hidden">
         <!-- Test Google-Form zum Video -->
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdsiDvcDVfvlvb2ZgypIgj5zd1KSWY0MveHKvCV3bPZMGtELQ/formResponse" target="_self" id="bootstrapForm" method="POST">
-          <fieldset>
-            <h2>
-              Platzhalterfragebogen<br />
-              <small>Blablabla das ist die Beschreibung des Fragebogens. Er dient zudem nur zu Testzwecken und wird als Platzhalter verwendet.</small>
-            </h2>
-          </fieldset>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdDXr6_seqD0Axz_w2UekhXZJ5fcpc0qWbBCrtjaikcyI6TxA/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>Fragen zum Video 3 &quot;Belichtung&quot;<br><small></small></h2>
+    </fieldset>
 
-          <!-- Field type: "short" id: "140902380" -->
-          <fieldset>
-            <legend for="140902380">ID</legend>
-            <div class="form-group">
-              <input id="94996532" type="text" name="entry.94996532" class="form-control" required oninput="validateInputs();" />
+
+    <!-- Field type: "short" id: "552199833" -->
+    <fieldset>
+        <legend for="552199833">Nutzer-ID</legend>
+        <div class="form-group">
+            <input id="465905592" type="text" name="entry.465905592" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "798915973" -->
+    <fieldset>
+        <legend for="798915973">Unter ____________  versteht man den Bereich zwischen dunkelster und hellster wahrnehmbarer Helligkeit. Die unterschiedlichen Belichtungsstufen werden als ____________ bezeichnet. </legend>
+        <div class="form-group">
+            <p class="help-block">Nennen Sie die zwei Wörter zum Füllen des Lückentextes</p>
+            <input id="414790774" type="text" name="entry.414790774" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "checkboxes" id: "482879339" -->
+    <fieldset>
+        <legend for="482879339">Welche Aussagen sind korrekt? Die Belichtung ist abhängig von…</legend>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.926825459" value="Belichtungszeit, Lichtmenge, Empfindlichkeit" >
+                    Belichtungszeit, Lichtmenge, Empfindlichkeit
+                </label>
             </div>
-          </fieldset>
-
-          <!-- Field type: "short" id: "1135896430" -->
-          <fieldset>
-            <legend for="1135896430">Bitte geben Sie einen random Input ein.</legend>
-            <div class="form-group">
-              <input id="1624342969" type="text" name="entry.1624342969" class="form-control" required oninput="validateInputs();" />
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.926825459" value="Brennweite, Empfindlichkeit, Lichtmenge" >
+                    Brennweite, Empfindlichkeit, Lichtmenge
+                </label>
             </div>
-          </fieldset>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.926825459" value="Brennweite, Lichtmenge, Empfindlichkeit" >
+                    Brennweite, Lichtmenge, Empfindlichkeit
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.926825459" value="Belichtungszeit, Empfindlichkeit, Schärfentiefe" >
+                    Belichtungszeit, Empfindlichkeit, Schärfentiefe
+                </label>
+            </div>
+        </div>
+    </fieldset>
 
-          <input type="hidden" name="fvv" value="1" />
-          <input type="hidden" name="fbzx" value="7951808529377160661" />
-          <!--
-CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
--->
-          <input type="hidden" name="pageHistory" value="0" />
 
-          <input id="nextVideo" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & Weiter" disabled />
-        </form>
+    <!-- Field type: "checkboxes" id: "857908713" -->
+    <fieldset>
+        <legend for="857908713">Welche Aussagen sind korrekt?</legend>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.575701979" value="Eine kurze Belichtungszeit führt zu Bewegungsunschärfe" >
+                    Eine kurze Belichtungszeit führt zu Bewegungsunschärfe
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.575701979" value="Die Blende regelt die Menge des einfallenden Lichts" >
+                    Die Blende regelt die Menge des einfallenden Lichts
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.575701979" value="Die Belichtungszeit wird mit dem ISO-Wert angegeben" >
+                    Die Belichtungszeit wird mit dem ISO-Wert angegeben
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.575701979" value="Mit dem Lichtmeter wird die Helligkeit gemessen" >
+                    Mit dem Lichtmeter wird die Helligkeit gemessen
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "744186578" -->
+    <fieldset>
+        <legend for="744186578">Was versteht man unter Belichtungskompensation?</legend>
+        <div class="form-group">
+            <textarea id="1033610821" name="entry.1033610821" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1313084930" -->
+    <fieldset>
+        <legend for="1313084930">Wenn ich bei ISO 100 die Blende von F2.0 auf F4.0 regle, muss ich den ISO auf _____ einstellen, um eine gleichbleibende Belichtung zu erhalten.</legend>
+        <div class="form-group">
+            <input id="2061598670" type="text" name="entry.2061598670" class="form-control" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "1312074744" -->
+    <fieldset>
+        <legend for="1312074744">Welche Vorteile bringen Empfindlichkeitsstufen bei einer Aufnahme?</legend>
+        <div class="form-group">
+            <textarea id="1565604147" name="entry.1565604147" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "1762791057" -->
+    <fieldset>
+        <legend for="1762791057">Stellen Sie zwei Automatikmodi gegenüber und beschreiben Sie je eine Situation in der dieser Modi geeignet ist?</legend>
+        <div class="form-group">
+            <textarea id="517360094" name="entry.517360094" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "95908010" -->
+    <fieldset>
+        <legend for="95908010">Ordnen Sie jedem der Bilder das richtige Histogramm im Bezug auf die Belichtung zu und erklären Sie was bei der jeweiligen Aufnahme am meisten auffällt.</legend>
+        <figure>
+          <img src="img/test3bild1.png" alt="Belichtung" style="width:100%">
+          <figcaption class="w3-tiny">Quelle: https://avecunphotographe.fr/wp-content/uploads/2015/05/expo-histo1.jpg</figcaption>
+        </figure>
+
+        <div class="form-group">
+            <textarea id="606048379" name="entry.606048379" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "954942814" -->
+    <fieldset>
+        <legend for="954942814">Nennen Sie zwei essentielle Einstellungen mit denen ein ähnliches Ergebnis wie bei diesem Foto erzeugt werden kann.</legend>
+        <figure>
+          <img src="img/test3bild2.jpg" alt="Fotografie einer Straße in der Nacht" style="width:100%">
+          <figcaption class="w3-tiny">Quelle: https://www.pexels.com/photo/time-lapse-photography-of-road-during-night-time-1013516/</figcaption>
+        </figure>
+
+        <div class="form-group">
+            <textarea id="1050293905" name="entry.1050293905" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "2050955985" -->
+    <fieldset>
+        <legend for="2050955985">Erklären Sie wieso bei Landschaftsaufnahmen oft Stative verwendet werden.</legend>
+        <div class="form-group">
+            <textarea id="1484455087" name="entry.1484455087" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="8200655957174947860">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input id="nextVideo" class="w3-button w3-black btn btn-primary"  type="submit" value="Fragebogen abgeben & Weiter" />
+</form>
+
       </div>
 
       <div>
