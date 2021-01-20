@@ -103,6 +103,17 @@ figure{
   max-width: 640px;
 }
 
+fieldset{
+  margin: 16px 2px;
+}
+
+textarea{
+  width: 100%;
+}
+
+input[type="text"]{
+  width: 100%;
+}
 
 
 
