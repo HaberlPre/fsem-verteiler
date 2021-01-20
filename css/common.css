@@ -115,6 +115,9 @@ input[type="text"]{
   width: 100%;
 }
 
+.small-text-input{
+  width:auto !important;
+}
 
 
 

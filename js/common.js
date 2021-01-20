@@ -36,7 +36,7 @@
       }
     }
 
-    if(radiosChecked !== 8 || checkboxesChecked == 0){
+    if(radiosChecked !== 10 || checkboxesChecked == 0){
       inputsEmpty = true;
     }else{
       //Fakultät-Radiobutton
@@ -44,7 +44,7 @@
         if(document.getElementById('fakultaet-other-text').value == null ||
            document.getElementById('fakultaet-other-text').value == ""){
              inputsEmpty = true;
-           }
+        }
       }
 
       //benutzte Kameras - checkbox
@@ -52,7 +52,23 @@
         if(document.getElementById('kameras-other-text').value == null ||
            document.getElementById('kameras-other-text').value == ""){
              inputsEmpty = true;
-           }
+        }
+      }
+
+      //verwendetes Gerät
+      if(document.getElementById('device-other-radio').checked){
+        if(document.getElementById('device-other-text').value == null ||
+           document.getElementById('device-other-text').value == ""){
+             inputsEmpty = true;
+        }
+      }
+
+      //Audioausgabe
+      if(document.getElementById('audio-other-radio').checked){
+        if(document.getElementById('audio-other-text').value == null ||
+           document.getElementById('audio-other-text').value == ""){
+             inputsEmpty = true;
+        }
       }
     }
 
