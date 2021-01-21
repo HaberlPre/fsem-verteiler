@@ -64,18 +64,18 @@ App = (function() {
 		let v1_2 = "https://www.youtube.com/embed/aw2ICAbBNnE?rel=0"; //bad video, good audio
 		//let v1_2 = "v1_2";
 		//permtation 3: schlecht schlecht
-		let v1_3 = "https://www.youtube.com/embed/caFmosxEeKw?rel=0"; //bad video, bad audio
+		let v1_3 = "https://www.youtube.com/embed/YaNa1yQScwA?rel=0"; //bad video, bad audio
 		//let v1_3 = "v1_3";
 
 	  //Video 2 - funktion
 		//permutation 1: pip
-		let v2_1 = "https://www.youtube.com/embed/snASqWrjh8Y?rel=0"; //pip
+		let v2_1 = "https://www.youtube.com/embed/-boizFQrzsQ?rel=0"; //pip
 		//let v2_1 = "v2_1";
 		//permutation 2: slides
 		let v2_2 = "https://www.youtube.com/embed/bjPQBuNfp-o?rel=0"; //slides
 		//let v2_2 = "v2_2";
 		//permutation 3: cam
-		let v2_3 = "https://www.youtube.com/embed/DSw98HSjzW4?rel=0"; //cam
+		let v2_3 = "https://www.youtube.com/embed/hC7tJ6uRH60?rel=0"; //cam
 		//let v2_3 = "v2_3";
 
 	  //Video 3 - belichtung
@@ -86,7 +86,7 @@ App = (function() {
 		let v3_2 = "https://www.youtube.com/embed/lwZbCl2zeos?rel=0"; //bad video, good audio
 		//let v3_2 = "v3_2";
 		//permutation 3: schlecht schlecht
-		let v3_3 = "https://www.youtube.com/embed/qZQIhpNG_nk?rel=0"; //bad video, bad audio
+		let v3_3 = "https://www.youtube.com/embed/1qDnz_g9GV4?rel=0"; //bad video, bad audio
 		//let v3_3 = "v3_3";
 
 	  //Video 4 - brennweite
@@ -97,7 +97,7 @@ App = (function() {
 		let v4_2 = "https://www.youtube.com/embed/Vo4lm94wDJI?rel=0"; //slides
 		//let v4_2 = "v4_2";
 		//permutation 3: cam
-		let v4_3 = "https://www.youtube.com/embed/TKcFIP4uO7Y?rel=0"; //cam
+		let v4_3 = "https://www.youtube.com/embed/DgEZ2Y5BFMY?rel=0"; //cam
 		//let v4_3 = "v4_3";
 
 		/*let v1Array = [v1_1, v1_2, v1_3], //videoArrays
