@@ -8,7 +8,8 @@ App = (function() {
   db,
   id,
   videoIdArray = [],
-  databaseIndexType = "liveIndex", //bei release "liveIndex"; test: "textIndex"
+  databaseIndexType = "testIndex", //bei release "liveIndex"; test: "textIndex"
+  //databaseIndexType = "liveIndex", //bei release "liveIndex"; test: "textIndex"
   databaseVideoIndex = 1000,
   userVideoIndex = 1000,
   userSubVideoIndex = 1000,
@@ -54,49 +55,49 @@ App = (function() {
 
   function setupVideoIds() {
 	  //uniqueVideoIds
-
+    //?rel=0 -> keine videos am ende
 	  //Video 1 - geschichte
 		//permutation 1: gut schlecht
-		let v1_1 = "https://www.youtube.com/embed/L7RAYOWtosQ"; //good video, bad audio
+		let v1_1 = "https://www.youtube.com/embed/L7RAYOWtosQ?rel=0"; //good video, bad audio
 		//let v1_1 = "v1_1";
 		//permutation 2: schlecht gut
-		let v1_2 = "https://www.youtube.com/embed/aw2ICAbBNnE"; //bad video, good audio
+		let v1_2 = "https://www.youtube.com/embed/aw2ICAbBNnE?rel=0"; //bad video, good audio
 		//let v1_2 = "v1_2";
 		//permtation 3: schlecht schlecht
-		let v1_3 = "https://www.youtube.com/embed/caFmosxEeKw"; //bad video, bad audio
+		let v1_3 = "https://www.youtube.com/embed/caFmosxEeKw?rel=0"; //bad video, bad audio
 		//let v1_3 = "v1_3";
 
 	  //Video 2 - funktion
 		//permutation 1: pip
-		let v2_1 = "https://www.youtube.com/embed/snASqWrjh8Y"; //pip
+		let v2_1 = "https://www.youtube.com/embed/snASqWrjh8Y?rel=0"; //pip
 		//let v2_1 = "v2_1";
 		//permutation 2: slides
-		let v2_2 = "https://www.youtube.com/embed/bjPQBuNfp-o"; //slides
+		let v2_2 = "https://www.youtube.com/embed/bjPQBuNfp-o?rel=0"; //slides
 		//let v2_2 = "v2_2";
 		//permutation 3: cam
-		let v2_3 = "https://www.youtube.com/embed/DSw98HSjzW4"; //cam
+		let v2_3 = "https://www.youtube.com/embed/DSw98HSjzW4?rel=0"; //cam
 		//let v2_3 = "v2_3";
 
 	  //Video 3
 		//permutation 1: gut schlecht
-		let v3_1 = "https://www.youtube.com/embed/rcHCdDZ2Hsg"; //good video, bad audio
+		let v3_1 = "https://www.youtube.com/embed/rcHCdDZ2Hsg?rel=0"; //good video, bad audio
 		//let v3_1 = "v3_1";
 		//permutation 2: schlecht gut
-		let v3_2 = "https://www.youtube.com/embed/lwZbCl2zeos"; //bad video, good audio
+		let v3_2 = "https://www.youtube.com/embed/lwZbCl2zeos?rel=0"; //bad video, good audio
 		//let v3_2 = "v3_2";
 		//permutation 3: schlecht schlecht
-		let v3_3 = "https://www.youtube.com/embed/qZQIhpNG_nk"; //bad video, bad audio
+		let v3_3 = "https://www.youtube.com/embed/qZQIhpNG_nk?rel=0"; //bad video, bad audio
 		//let v3_3 = "v3_3";
 
 	  //Video 4
 		//permutation 1: pip
-		let v4_1 = "https://www.youtube.com/embed/D0_0SAQIFts"; //pip
+		let v4_1 = "https://www.youtube.com/embed/D0_0SAQIFts?rel=0"; //pip
 		//let v4_1 = "v4_1";
 		//permutation 2: slides
-		let v4_2 = "https://www.youtube.com/embed/Vo4lm94wDJI"; //slides
+		let v4_2 = "https://www.youtube.com/embed/Vo4lm94wDJI?rel=0"; //slides
 		//let v4_2 = "v4_2";
 		//permutation 3: cam
-		let v4_3 = "https://www.youtube.com/embed/TKcFIP4uO7Y"; //cam
+		let v4_3 = "https://www.youtube.com/embed/TKcFIP4uO7Y?rel=0"; //cam
 		//let v4_3 = "v4_3";
 
 		/*let v1Array = [v1_1, v1_2, v1_3], //videoArrays
