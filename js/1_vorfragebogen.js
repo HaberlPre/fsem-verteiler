@@ -78,7 +78,7 @@ App = (function() {
 		let v2_3 = "https://www.youtube.com/embed/DSw98HSjzW4?rel=0"; //cam
 		//let v2_3 = "v2_3";
 
-	  //Video 3
+	  //Video 3 - belichtung
 		//permutation 1: gut schlecht
 		let v3_1 = "https://www.youtube.com/embed/rcHCdDZ2Hsg?rel=0"; //good video, bad audio
 		//let v3_1 = "v3_1";
@@ -89,9 +89,9 @@ App = (function() {
 		let v3_3 = "https://www.youtube.com/embed/qZQIhpNG_nk?rel=0"; //bad video, bad audio
 		//let v3_3 = "v3_3";
 
-	  //Video 4
+	  //Video 4 - brennweite
 		//permutation 1: pip
-		let v4_1 = "https://www.youtube.com/embed/D0_0SAQIFts?rel=0"; //pip
+		let v4_1 = "https://www.youtube.com/embed/AACiKb0ZV-M?rel=0"; //pip
 		//let v4_1 = "v4_1";
 		//permutation 2: slides
 		let v4_2 = "https://www.youtube.com/embed/Vo4lm94wDJI?rel=0"; //slides
