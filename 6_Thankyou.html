@@ -31,7 +31,7 @@
       <p class="w3-center">Bei Fragen wenden Sie sich bitte an: Fabian.Feldmeier@stud.uni-regensburg.de oder Sabrina1.Hartl@stud.uni-regensburg.de</p>
       <p class="w3-center">Ansonsten können Sie diese Seite nun schließen.</p>
 
-	    <button id="soAbgeben" onclick="abgabe()">Ohne VP-Stunden abgeben</button>
+	    <button class="w3-button w3-black btn btn-primary" id="soAbgeben" onclick="abgabe()">Ohne VP-Stunden abgeben</button>
 
       <form action="https://docs.google.com/forms/d/e/1FAIpQLSfFR05A7SF6PoZFZUsLhycjNEyglBvLl5uroJuovziazilp4g/formResponse"
       target="_self"
@@ -98,7 +98,7 @@
     <script>
       function abgabe() {
         document.querySelector("form").classList.add("hidden");
-		document.querySelector("#soAbgeben").classList.add("hidden");
+		    document.querySelector("#soAbgeben").classList.add("hidden");
         document.querySelector("#absendeBestaetigung").classList.remove("hidden");
       }
     </script>
