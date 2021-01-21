@@ -20,3 +20,9 @@ $('#bootstrapForm').submit(function (event) {
         }
     })
 })
+
+function hideVPFragebogen(){
+  document.querySelector("#soAbgeben").classList.add("hidden");
+  document.querySelector("form").classList.add("hidden");
+  document.querySelector("#absendeBestaetigung").classList.remove("hidden");
+}

@@ -96,7 +96,7 @@ iframe{
 }
 
 .w3-button{
-  margin-top: 16px;
+  /* margin-top: 16px; */
 }
 
 figure{
@@ -119,7 +119,11 @@ input[type="text"]{
   width:auto !important;
 }
 
-
+#soAbgeben{
+  margin-bottom: 32px;
+  background-color: green;
+  color: white;
+}
 
 
 

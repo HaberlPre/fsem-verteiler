@@ -27,11 +27,20 @@
     <!-- Main Section -->
     <div class="w3-container content-container" style="padding: 128px 16px;" id="about">
       <h3 class="w3-center w3-xlarge">Vielen Dank für Ihre Teilnahme!</h3>
-      <p class="w3-center">Wenn Sie Student an der Universität Regensburg sind und Versuchspersonenstunden anrechnen lassen möchten, geben Sie bitte folgende Daten ein und klicken Sie auf &quot;Fragebogen abgeben&quot;. Die eingegebenen Daten werden separat von den vorherigen Fragebögen gespeichert und lässt sich nicht auf Ihre Person zurückverfolgen. </p>
+      <p class="w3-center">Wenn Sie Student an der Universität Regensburg sind und Versuchspersonenstunden anrechnen lassen möchten,
+         geben Sie bitte die gefragten Daten ein und klicken Sie auf den schwarzen Button &quot;Für VP-Stunden eintragen&quot;. Die eingegebenen Daten werden separat
+         von den vorherigen Fragebögen gespeichert und lässt sich nicht auf Ihre Person zurückverfolgen.
+      </p>
+
+      <p class="w3-center">
+Falls Sie weiteres Interesse an dieser Studie haben, können Sie nähere Informationen unter folgenden Links erhalten:
+<a href="https://wiki.mi.ur.de/lehre/ws20/fsm_20ws/group_a" target="_blank">Gruppe A</a>
+& <a href="https://wiki.mi.ur.de/lehre/ws20/fsm_20ws/group_b" target="_blank">Gruppe B</a>
+</p>
       <p class="w3-center">Bei Fragen wenden Sie sich bitte an: Fabian.Feldmeier@stud.uni-regensburg.de oder Sabrina1.Hartl@stud.uni-regensburg.de</p>
       <p class="w3-center">Ansonsten können Sie diese Seite nun schließen.</p>
 
-	    <button class="w3-button w3-black btn btn-primary" id="soAbgeben" onclick="abgabe()">Ohne VP-Stunden abgeben</button>
+	    <button class="w3-button btn btn-primary" id="soAbgeben" onclick="hideVPFragebogen();">Studie ohne VP-Stunden beenden</button>
 
       <form action="https://docs.google.com/forms/d/e/1FAIpQLSfFR05A7SF6PoZFZUsLhycjNEyglBvLl5uroJuovziazilp4g/formResponse"
       target="_self"
@@ -39,12 +48,13 @@
       method="POST">
     <fieldset>
         <h2>Versuchspersonenstunden</h2>
+        <span class="w3-text-red">&#128956; Erforderlich</span>
     </fieldset>
 
 
     <!-- Field type: "short" id: "1074582840" -->
     <fieldset>
-        <legend for="1074582840">Matrikelnummer</legend>
+        <legend for="1074582840">Matrikelnummer<span class="w3-text-red"> &#128956; </span></legend>
         <div class="form-group">
             <input id="537301155" type="text" name="entry.537301155" class="form-control" required>
         </div>
@@ -53,7 +63,7 @@
 
     <!-- Field type: "short" id: "1112110210" -->
     <fieldset>
-        <legend for="1112110210">Familienname</legend>
+        <legend for="1112110210">Familienname<span class="w3-text-red"> &#128956; </span></legend>
         <div class="form-group">
             <input id="1121521769" type="text" name="entry.1121521769" class="form-control" required>
         </div>
@@ -62,7 +72,7 @@
 
     <!-- Field type: "short" id: "233864758" -->
     <fieldset>
-        <legend for="233864758">Vorname</legend>
+        <legend for="233864758">Vorname<span class="w3-text-red"> &#128956; </span></legend>
         <div class="form-group">
             <input id="1587481286" type="text" name="entry.1587481286" class="form-control" required>
         </div>
@@ -78,7 +88,7 @@
     -->
     <input type="hidden" name="pageHistory" value="0">
 
-    <input class="w3-button w3-black btn btn-primary" type="submit" value="Fragebogen abgeben">
+    <input class="w3-button w3-black btn btn-primary" type="submit" value="Für VP-Stunden eintragen">
 </form>
 <h3 class="w3-center w3-xlarge hidden" id="absendeBestaetigung">Ihre Angaben wurden gespeichert. Sie können diese Seite nun schließen.</h3>
 

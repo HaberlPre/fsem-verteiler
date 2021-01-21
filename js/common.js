@@ -8,6 +8,7 @@
       lernvideo.classList.add("hidden");
       lernvideo.remove();
       wissensfragebogen.classList.remove("hidden");
+      window.scrollTo({top: 0, behavior: 'smooth'});
     }
   }
 
