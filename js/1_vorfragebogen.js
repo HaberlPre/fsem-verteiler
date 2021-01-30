@@ -8,10 +8,10 @@ App = (function() {
   db,
   id,
   videoIdArray = [],
-  databaseIndexType = "testIndex", //bei release "liveIndex"; test: "textIndex"
+  databaseIndexType = "noIndex", //bei release "liveIndex"; test: "textIndex"
   //databaseIndexType = "liveIndex", //bei release "liveIndex"; test: "textIndex"
   databaseVideoIndex = 1000,
-  userVideoIndex = 1000,
+  //userVideoIndex = 1000,
   userSubVideoIndex = 1000,
   logStr;
 
@@ -20,12 +20,14 @@ App = (function() {
   initFirebase(firebase);
 	setupInput();
 	id = sessionStorage.getItem("userID");
-	console.log(id);
+  databaseVideoIndex = sessionStorage.getItem("userVideoID")
+	console.log(id, databaseVideoIndex);
   loadIDs();
   document.getElementById("1752850528").value = id; //value bei finalem Bogen anpassen
 	setupVideoIds();
 	console.log(sessionStorage.getItem("userVideoID")); //default: name, subVideoIndex = 998, videoIndex = 999
-	userVideoIndex = sessionStorage.getItem("userVideoID");
+	//userVideoIndex = sessionStorage.getItem("userVideoID");
+  //console.log(userVideoIndex); //hoffentlich gleich wie line 24
 	userSubVideoIndex = sessionStorage.getItem("userSubID");
   logStr = sessionStorage.getItem("logStr");
   }
@@ -36,7 +38,7 @@ App = (function() {
         //console.log(Object.values(doc.data()));
       //sessionStorage.setItem("userData", Object.values(doc.data()));
       sessionStorage.setItem("userSubID", doc.data().subVideoIndex);
-      var wipIndex = doc.data().videoIndex;
+      /*var wipIndex = doc.data().videoIndex;
       console.log(wipIndex);
       if (wipIndex < 900 && wipIndex > 71) { //eig nichtmehr nötig
         wipIndex -= 72;
@@ -45,7 +47,7 @@ App = (function() {
       }
       console.log(wipIndex);
       sessionStorage.setItem("userVideoID", wipIndex);
-      userVideoIndex = wipIndex;
+      userVideoIndex = wipIndex;*/
     }).catch(function(error) {
         //console.log("Error getting cached document:", error);
     });
@@ -206,7 +208,7 @@ App = (function() {
     //todo: videos zuweisen
 
     //zuvor schauen ob user schon index zugewiesen bekommen hat?
-    if (userVideoIndex == 999) {
+    /*if (userVideoIndex == 999) { //findet nicht statt
     	//aktuellen videoIndex aus DB ziehen
     	var getIndexRef = that.db.collection("videoIndex").doc(databaseIndexType);
     	getIndexRef.get().then(function(doc) {
@@ -214,10 +216,10 @@ App = (function() {
     	  console.log(databaseVideoIndex);
     	}).catch(function(error) {
     		//console.log("Error getting cached document:", error);
-    	});
+    	});*/
       //}
 		    //db warten
-  		setTimeout(function (){
+  		//setTimeout(function (){
 
   			//userid den videoindex zuweisen
   			that.db.collection("IDs").doc(id).update({
@@ -227,11 +229,11 @@ App = (function() {
   			//userid subIndex zuweisen (bsp video 2 auf liste dran) ^
   			userSubVideoIndex = 0;
 
-        if (databaseVideoIndex < 900) {
+        /*if (databaseVideoIndex < 900) {
     			that.db.collection("videoIndex").doc(databaseIndexType).update({
     				"index": parseInt(databaseVideoIndex)+1
     			})
-        }
+        }*/
 
         if (databaseVideoIndex > 71) {
           databaseVideoIndex -= 72;
@@ -253,11 +255,12 @@ App = (function() {
         "videoLink3": videoIdArray[databaseVideoIndex][2],
         "videoLink4": videoIdArray[databaseVideoIndex][3],
         })
-  		}, 999); //timeout required for database to answer
+  		//}, 999); //timeout required for database to answer
 
-  	} else if (userVideoIndex == 1000) {
+  	//} else
+    /*if (userVideoIndex == 1000) {
   		console.log("error");
-  	} else {
+  	} else {*/
   		//todo data aus db ziehen
   		console.log("todo load data - geht? vgl index -> app -> getData");
       if (databaseVideoIndex < 900 && databaseVideoIndex > 71) { //eig nichtmehr nötig
@@ -265,7 +268,7 @@ App = (function() {
       } else if (databaseVideoIndex < 900 && databaseVideoIndex > 35) {
         databaseVideoIndex -= 36;
       }
-    }
+    //}
     console.log(databaseVideoIndex);
 	}
 

@@ -7,6 +7,7 @@ App = (function() {
   var that = {},
   db,
   id,
+  vid_index,
   pos;
 
   function init(firebase) {
@@ -27,7 +28,7 @@ App = (function() {
 	that.db.collection("IDs").doc(id).set({
 	"name": id,
 	"subVideoIndex": 998,
-	"videoIndex": 999,
+	"videoIndex": vid_index,
   "logStr" : ""
 	})
 	supplyPreQuestionnaire();
@@ -39,15 +40,15 @@ App = (function() {
       //console.log(Object.values(doc.data()));
 	  //sessionStorage.setItem("userData", Object.values(doc.data()));
 	  sessionStorage.setItem("userSubID", doc.data().subVideoIndex);
-    var wipIndex = doc.data().videoIndex;
+    var wipIndex = doc.data().videoIndex; //eig nicht nötig? bsp: index 36 kann man mit 0 nachholen
     console.log(wipIndex);
-    if (wipIndex < 900 && wipIndex > 71) { //eig nichtmehr nötig
+    /*if (wipIndex < 900 && wipIndex > 71) { //eig nichtmehr nötig
       wipIndex -= 72;
     } else if (wipIndex < 900 && wipIndex > 35) {
       wipIndex -= 36;
     }
     console.log(wipIndex);
-    sessionStorage.setItem("userVideoID", wipIndex);
+    sessionStorage.setItem("userVideoID", wipIndex);*/
 	  //sessionStorage.setItem("userVideoID", doc.data().videoIndex);
     sessionStorage.setItem("logStr", doc.data().logStr);
 
@@ -62,13 +63,16 @@ App = (function() {
 
   function setupInput(){
 	let idButton = document.getElementById("idInputButton"),
-	idInput = document.getElementById("idInput");
+	idInput = document.getElementById("idInput"),
+  indexInput = document.getElementById("indexInput");
 
 	idButton.addEventListener("click", function() {
       idButton.disabled = true;
       id = idInput.value;
-  	  console.log(id);
+      vid_index = parseInt(indexInput.value);
+  	  console.log(id, vid_index);
   	  sessionStorage.setItem("userID", id);
+      sessionStorage.setItem("userVideoID", vid_index);
   	  checkDBforID();
     });
 

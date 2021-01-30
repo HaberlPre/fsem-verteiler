@@ -93,9 +93,10 @@
     // }
   }
 
-  let idInput = document.getElementById("idInput");
+  let idInput = document.getElementById("idInput"),
+  indexInput = document.getElementById("indexInput");
   function validateIDInput(){
-    if(idInput.value == null || idInput.value == ""){
+    if(idInput.value == null || idInput.value == ""|| indexInput.value == null || indexInput.value == ""){
         submitButton.disabled = true;
       }else{
         submitButton.disabled = false;
