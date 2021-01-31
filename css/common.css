@@ -125,6 +125,28 @@ input[type="text"]{
   color: white;
 }
 
+#copyMailButton{
+  margin: 0 !important;
+  color: #fff !important;
+  background-color: #000 !important;
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#copyMailButton:hover{
+  color: #000 !important;
+  background-color: #ccc !important;
+}
+
 
 
 

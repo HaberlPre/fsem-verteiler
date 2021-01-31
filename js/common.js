@@ -107,3 +107,15 @@
 // window.onload = function(){
 //   validateInputs();
 // }
+
+let copyEmailButton = document.getElementById("copyMailButton");
+function copyEmail(){
+  let dummy = document.createElement("textarea");
+  document.body.appendChild(dummy);
+  dummy.value = "Lucas.Haberl@stud.uni-regensburg.de";
+  dummy.select();
+  document.execCommand("copy");
+  document.body.removeChild(dummy);
+
+  copyEmailButton.innerHTML = "<i class='fas fa-check'></i> E-Mail-Adresse kopiert"
+}

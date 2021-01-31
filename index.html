@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/common.css" />
+      <script src="https://kit.fontawesome.com/7443abc02b.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Navbar (sit on top) -->
@@ -28,10 +29,29 @@
     <div class="w3-container content-container" style="padding: 128px 16px;" id="about">
       <h3 class="w3-center">Liebe(r) StudienteilnehmerIn</h3>
 
-<p class="w3-center">
+      <p class="w3-center w3-large">
+        Alle regulären Teilnehmeplätze sind vergeben.
+
+       </p>
+       <p class="w3-center w3-large w3-text-green">
+         <b>Es gibt es aber noch ein paar Restplätze - du kannst also noch teilnehmen und deine 2 VPs erhalten!</b>
+        </p>
+
+        <p class="w3-center w3-large">
+
+          Bitte wende dich für eine Zuteilung der verbliebenen Plätze an folgende E-Mail:
+         </p>
+         <p class="w3-center w3-large">
+
+           <b>Lucas.Haberl@stud.uni-regensburg.de</b> <button id="copyMailButton" onclick="copyEmail();"><i class="far fa-copy"></i> E-Mail-Adresse kopieren</button>
+          </p>
+
+
+
+<p class="w3-center hidden">
 Wir sind zwei Gruppen aus dem Forschungsseminar im Master Medieninformatik an der Universität Regensburg.
 </p>
-      <p class="w3-center">
+      <p class="w3-center hidden">
         Mit dieser Studie wollen wir herausfinden, ob bestimmte Eigenschaften von Lernvideos einen Einfluss auf das Inhaltsverständnis dieser Videos hat.
         <br/>
         Sie füllen zuerst einen kurzen Vorfragebogen aus. Danach startet die Hauptstudie.
@@ -39,7 +59,7 @@ Wir sind zwei Gruppen aus dem Forschungsseminar im Master Medieninformatik an de
         dessen Fragen sich auf das Video beziehen. Dieser Fragebogen soll abfragen, welche Inhalte Sie aus
         diesem Video mitgenommen haben. Danach kommt das nächste Video mit dem dazugehörigem Fragebogen. Es gibt insgesamt 4 Videos.
       </p>
-        <p class="w3-center">
+        <p class="w3-center hidden">
         Führen Sie diese Studie auf dem gleichen Gerät durch, mit welchem Sie normalerweise an einer Live-Vorlesung teilnehmen.
         Gehen Sie davon aus, dass es sich bei den Videos um eine Live-Vorlesung handelt. Verzichten Sie deshalb auf Vor- und Zurückspulen. Es steht Ihnen frei Notizen zu machen.
         Bitte sehen Sie sich jedes Video <b><u>einmal vollständig an</u></b> und <b>springen Sie beim Beantworten der Fragen <u>nicht zurück zum Video</u></b>.
@@ -47,25 +67,25 @@ Wir sind zwei Gruppen aus dem Forschungsseminar im Master Medieninformatik an de
         <b>Bei der Beantwortung der Fragebögen bitte NICHT GOOGLEN.</b>
         Es werden die Lernvideos untersucht und nicht Sie.
       </p>
-<p class="w3-center">
+<p class="w3-center hidden">
 Die Beantwortung dieses Fragebogen dauert ca. 60 - 90 Minuten (4 x 10 Minuten für die Videos + Beantwortung der Fragebögen).
 <br/>
 <b>Falls Sie Student an der Universität Regensburg sind, können Sie sich am Ende der Studie eintragen und Sie erhalten <u>2 Versuchspersonenstunden</u>.</b>
 </p>
-<p class="w3-center">
+<p class="w3-center hidden">
 Die erhobenen Daten werden im Rahmen des Forschungsseminars ausgewertet. Die Daten sind von vornherein anonymisiert und können nicht auf Sie zurückverfolgt werden.
 </p>
-<p class="w3-center">
+<p class="w3-center hidden">
 Bei Fragen wenden Sie sich bitte an: Fabian.Feldmeier@stud.uni-regensburg.de oder Sabrina1.Hartl@stud.uni-regensburg.de
       </p>
-      <p class="w3-center w3-large"> Um zu starten, geben Sie bitte Ihr RZ-Kürzel der Universität Regensburg (z.B. vip12345) in das ID-Eingabefeld ein.
+      <p class="w3-center w3-large hidden"> Um zu starten, geben Sie bitte Ihr RZ-Kürzel der Universität Regensburg (z.B. vip12345) in das ID-Eingabefeld ein.
          Falls Sie keines haben, können Sie sich ein Kürzel ausdenken (z.B. Initialen Ihres Namens und Kombination von Zahlen). Schreiben Sie sich dieses Kürzel auf oder merken Sie es sich.
        </p>
 
-<p class="w3-center w3-large">
+<p class="w3-center w3-large hidden">
   Falls Sie mitten in der Studie aufhören, können Sie sich mit diesem Kürzel wieder einloggen und die Studie ab dem zuletzt gesehenen Fragebogen fortsetzen.
 </p>
-      <div id="schoolIdDiv" class="w3-center">
+      <div id="schoolIdDiv" class="w3-center hidden">
         Ihre ID: <input type="text" id="idInput" class="small-text-input" required oninput="validateIDInput();"/><br />
         <input type="submit" id="idInputButton" class="w3-button w3-black" style="margin-top: 8px;" value="Studie starten" disabled />
       </div>
