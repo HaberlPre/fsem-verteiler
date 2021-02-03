@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>-->
+		<title>Ufo - Datenagent</title>
+		<meta name="author" content="Lucas Haberl">
+		<meta name="description" content="Firebase Datenagent">
+	</head>
+	<body>
+		<header>
+			<h1>Hello Database</h1>
+		</header>
+		<!-- Skripte-->
+		<script src="js/App.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script> <!-- orig 7.9.3 causes error -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!--<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>-->
+		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+				apiKey: "AIzaSyDKBgDG0cFsAA8qZe_LmcG2SZWv3LA_Lso",
+        authDomain: "forschungs-sem.firebaseapp.com",
+        projectId: "forschungs-sem",
+        storageBucket: "forschungs-sem.appspot.com",
+        messagingSenderId: "280864368745",
+        appId: "1:280864368745:web:ca0eaa165e0d18a5661af8",
+        measurementId: "G-ELCQKC7NEQ",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      //firebase.analytics();
+			App.init(firebase);
+    </script>
+	</body>
+</html>
